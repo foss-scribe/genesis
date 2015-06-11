@@ -1,14 +1,12 @@
 # Parameters
-/app/config/parameters.yml
-/app/config/parameters.ini
+/app/config/config.json
 
 # Managed by Composer
 /bin/*
 /vendor/
 
 # Assets and user uploads
-/web/bundles/
-/web/uploads/
+/public/assets/
 
 # PHPUnit
 /app/phpunit.xml
