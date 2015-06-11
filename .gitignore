@@ -5,8 +5,8 @@
 /bin/*
 /vendor/
 
-# Assets and user uploads
-/public/assets/
+# Assets
+/web/assets/
 
 # PHPUnit
 /app/phpunit.xml

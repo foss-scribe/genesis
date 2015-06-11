@@ -17,6 +17,11 @@ require_once __DIR__.'/../app/src/providers.php';
 //load config		
 $loadConfig = json_decode(file_get_contents(__DIR__.'/../app/config/settings.json'), true);
 
+$app['session']->set('config', array(
+			'templates_dir' => $loadConfig['templates'],
+			'projects_dir' => $loadConfig['projects']
+			));
+
 //load routes
 require_once __DIR__.'/../app/src/routes.php';
 
