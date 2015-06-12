@@ -1,5 +1,5 @@
 # Parameters
-/app/config/config.json
+/app/config/settings.json
 
 # Managed by Composer
 /bin/*

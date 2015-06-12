@@ -20,7 +20,23 @@ $loadConfig = json_decode(file_get_contents(__DIR__.'/../app/config/settings.jso
 $app['session']->set('config', array(
 			'templates_dir' => $loadConfig['templates'],
 			'projects_dir' => $loadConfig['projects']
-			));
+));
+
+//get templates, we only want json files
+$templates = glob($loadConfig['templates'] . '/*.json');
+
+//get worlds, we want directories
+$worlds = scandir($loadConfig['projects']);
+//remove first two keys
+unset($worlds[0]);
+unset($worlds[1]);
+
+
+$app['session']->set('templates', $templates);
+$app['session']->set('worlds', $worlds);
+
+unset($templates);
+unset($world);
 
 //load routes
 require_once __DIR__.'/../app/src/routes.php';
