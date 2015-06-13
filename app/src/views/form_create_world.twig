@@ -4,7 +4,29 @@
 
 <h2>Create a world</h2>
 
-<p>There are no worlds so we must create one</p>
+<form class="uk-form">
 
+<fieldset data-uk-margin>
+
+{% for field, type in fieldset.fields %}
+
+	{% if type == "text" %}
+
+	<label for="{{field}}">{{ field }}<input type="{{ type }}" name="{{field}}"></label>
+
+	{% endif %}
+
+	{% if type == "textarea" %}
+
+	<p> {{ field }} ... </p>
+	<textarea name="{{field}}"></textarea>
+
+	{% endif %}
+
+{% endfor %}
+</fieldset>
+
+<input class="uk-button" type="submit" value="Save">
+</form>
 
 {% endblock %}
